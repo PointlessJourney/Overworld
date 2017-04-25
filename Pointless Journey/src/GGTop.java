@@ -49,4 +49,5 @@ public class GGTop extends OverChar {
 		g2d.setTransform(transform);
 			
 	}
+
 }
