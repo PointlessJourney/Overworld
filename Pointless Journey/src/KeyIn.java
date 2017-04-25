@@ -6,6 +6,7 @@ public class KeyIn extends KeyAdapter {
 	
 	public KeyIn (Handler handler){
 		this.handler = handler;
+		
 	}
 	public void keyPressed(KeyEvent e){
 		int key = e.getKeyCode();
