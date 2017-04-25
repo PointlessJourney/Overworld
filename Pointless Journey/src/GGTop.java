@@ -2,16 +2,18 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class GGTop extends OverChar {
-
+	static int count = 0;
 	public GGTop(int x, int y, ID player) {
 		super(x, y, player);
-		// TODO Auto-generated constructor stub
+		
+		velX = 2;
 	}
 
 	
 	public void tick() {
-		// TODO Auto-generated method stub
 		
+		x += velX;
+
 	}
 
 	
