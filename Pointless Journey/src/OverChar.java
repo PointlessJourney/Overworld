@@ -2,14 +2,14 @@ import java.awt.Graphics;
 
 public abstract class OverChar
 {
-	public OverChar(int x, int y, OverChar id)
+	public OverChar(int x, int y, ID id)
 	{
 		this.x = x;
 		this.y = y;
 		this.id = id;
 	}
     protected int x, y, velX, velY;  
-    protected OverChar id;
+    protected ID id;
 	public abstract void tick();
 	public abstract void render(Graphics g);
     
@@ -30,10 +30,10 @@ public abstract class OverChar
 	{
 		return y;
 	}
-	public void setID(OverChar id)	{
+	public void setID(ID id)	{
 		this.id = id;
 	}
-	public OverChar getID()
+	public ID getID()
 	{
 		return id;
 	}
