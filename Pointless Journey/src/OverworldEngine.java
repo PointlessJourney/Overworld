@@ -12,10 +12,14 @@ public class OverworldEngine extends Canvas implements Runnable {
 
 	public OverworldEngine()
 	{
-		new FrameSetup (width, height, "Pointless Journey", this);
-		handler = new Handler();
 		
-		handler.addObject(new GGTop(200,300,ID.Player));
+		handler = new Handler();
+		handler.addObject(new GGTop(width/2-64,height/2-64,ID.Player));
+		this.addKeyListener(new KeyIn(handler));
+
+		new FrameSetup (width, height, "Pointless Journey", this);
+		
+
 	
 	}
 
@@ -67,7 +71,7 @@ public class OverworldEngine extends Canvas implements Runnable {
 			if(System.currentTimeMillis() - timer > 1000)
 			{
 				timer += 1000;
-				System.out.println("FPS: "+ frames);
+				//System.out.println("FPS: "+ frames);
 				frames = 0;
 			}
 		}

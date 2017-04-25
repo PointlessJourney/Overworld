@@ -5,22 +5,28 @@ public class GGTop extends OverChar {
 	static int count = 0;
 	public GGTop(int x, int y, ID player) {
 		super(x, y, player);
+		velY = 3;
+		velX = 3;
 		
-		velX = 2;
 	}
 
 	
 	public void tick() {
 		
-		x += velX;
 
 	}
-
 	
 	public void render(Graphics g) {	// enter character picture and information here
 		// TODO Auto-generated method stub
-		g.setColor(Color.WHITE);
-		g.fillRect(x, y, 64, 64);
+		if(id == ID.Player)
+		{
+			g.setColor(Color.WHITE);
+		}
+		else if (id == ID.Player2)
+		{
+			g.setColor(Color.RED);
+		}
+			g.fillRect(x, y, 64, 64);
 	}
 
 
