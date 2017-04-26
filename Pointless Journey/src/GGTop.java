@@ -31,8 +31,8 @@ public class GGTop extends OverChar {
 		{
 			g.setColor(Color.RED);
 		}
-		int centerX = x +34;
-		int centerY = y + 13;
+		int centerX = x +13;
+		int centerY = y + 34;
 		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
 		int mouseX = MouseInfo.getPointerInfo().getLocation().x;
 		
@@ -45,7 +45,7 @@ public class GGTop extends OverChar {
 
 		g2d.rotate(angle, centerX, centerY);
 
-		g.fillRect(x, y, 68, 26); // draw your rectangle
+		g.fillRect(x, y, 26, 68); // draw your rectangle
 
 		g2d.setTransform(transform);
 			
