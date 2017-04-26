@@ -1,19 +1,24 @@
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 
 public class GGTop extends OverChar {
 	static int count = 0;
 	public GGTop(int x, int y, ID player) {
 		super(x, y, player);
-		velY = 3;
-		velX = 3;
 		
 	}
 
-	
 	public void tick() {
 		
-
+		x += velX;
+		y += velY;
 	}
 	
 	public void render(Graphics g) {	// enter character picture and information here
@@ -26,9 +31,23 @@ public class GGTop extends OverChar {
 		{
 			g.setColor(Color.RED);
 		}
-			g.fillRect(x, y, 64, 64);
+		int centerX = x +34;
+		int centerY = y + 13;
+		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
+		int mouseX = MouseInfo.getPointerInfo().getLocation().x;
+		
+		double angle = Math.atan2(centerY - mouseY, centerX - mouseX) - Math.PI/2;
+
+		/*((Graphics2D)g).rotate(angle, centerX, centerY);*/
+		Graphics2D g2d = (Graphics2D)g;
+		AffineTransform transform = g2d.getTransform();
+
+		g2d.rotate(angle, centerX, centerY);
+
+		g.fillRect(x, y, 68, 26); // draw your rectangle
+
+		g2d.setTransform(transform);
+			
 	}
-
-
 
 }
