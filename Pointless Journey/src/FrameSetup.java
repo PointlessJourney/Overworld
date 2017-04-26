@@ -30,7 +30,9 @@ public class FrameSetup extends Canvas {
 		    cursorImg, new Point(0, 0), "blank cursor");
 
 		// Set the blank cursor to the JFrame.
+
 		frame.getContentPane().setCursor(blankCursor);
+
 		game.start();
 
 		
