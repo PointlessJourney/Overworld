@@ -36,6 +36,7 @@ public class GGTop extends OverChar {
 		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
 		int mouseX = MouseInfo.getPointerInfo().getLocation().x;
 		
+
 		double angle = Math.atan2(centerY - mouseY, centerX - mouseX);
 
 		/*((Graphics2D)g).rotate(angle, centerX, centerY);*/
@@ -51,3 +52,4 @@ public class GGTop extends OverChar {
 	}
 
 }
+
