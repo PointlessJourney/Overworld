@@ -13,7 +13,7 @@ public class KeyIn extends KeyAdapter {
 		for (int i = 0; i < handler.object.size(); i++)
 		{
 			OverChar temp = handler.object.get(i);
-			int speed = 4;
+			int speed = 3;
 			int back = speed*-1;
 			if (temp.getID() == ID.Player)
 			{		//player movement keys
