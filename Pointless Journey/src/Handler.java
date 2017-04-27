@@ -21,11 +21,11 @@ public class Handler {
 			temp.render(g);
 		}
 	}
-	public void addObject(GGTop object)
+	public void addObject(OverChar object)
 	{
 		this.object.add(object);
 	}
-	public void removeObject(GGTop object)
+	public void removeObject(OverChar object)
 	{
 		this.object.remove(object);
 	}
