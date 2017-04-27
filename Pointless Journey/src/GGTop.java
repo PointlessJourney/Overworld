@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 
 public class GGTop extends OverChar {
 	static int count = 0;
+	//eurhwighwieohgerhjg9werjgorejogweogjoejgowjogwjergjowejrogwjogjowegowjlg
 	public GGTop(int x, int y, ID player) {
 		super(x, y, player);
 		
