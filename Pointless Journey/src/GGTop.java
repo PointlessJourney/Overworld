@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 
 public class GGTop extends OverChar {
 	static int count = 0;
-	//eurhwighwieohgerhjg9werjgorejogweogjoejgowjogwjergjowejrogwjogjowegowjlg
+	boolean first = true;
 	public GGTop(int x, int y, ID player) {
 		super(x, y, player);
 		
@@ -20,34 +20,44 @@ public class GGTop extends OverChar {
 		
 		x += velX;
 		y += velY;
+		int z = 0;
 	}
 	
 	public void render(Graphics g) {	// enter character picture and information here
 		// TODO Auto-generated method stub
 		if(id == ID.Player)
 		{
+			if (first)
+			{
+				x = 576;
+				y = -2578;
+				first = false;
+			}
+			
 			g.setColor(Color.WHITE);
+			g.fillRect(x, y, 4000, 3000); // draw your rectangle
+
 		}
 		else if (id == ID.Player2)
 		{
-			g.setColor(Color.RED);
-		}
-		int centerX = x + 6;
-		int centerY = y + 17;
-		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
-		int mouseX = MouseInfo.getPointerInfo().getLocation().x;
+			int centerX = 652;
+			int centerY = 372;
+			int mouseY = MouseInfo.getPointerInfo().getLocation().y;
+			int mouseX = MouseInfo.getPointerInfo().getLocation().x;
 		
-		double angle = Math.atan2(centerY - mouseY, centerX - mouseX) - Math.PI/2;
+			double angle = Math.atan2(centerY - mouseY, centerX - mouseX) - Math.PI/2;
 
-		/*((Graphics2D)g).rotate(angle, centerX, centerY);*/
-		Graphics2D g2d = (Graphics2D)g;
-		AffineTransform transform = g2d.getTransform();
+			((Graphics2D)g).rotate(angle, centerX, centerY);
+			Graphics2D g2d = (Graphics2D)g;
+			AffineTransform transform = g2d.getTransform();
+			g.setColor(Color.RED);
+			g.fillRect(640, 360, 25, 25); // draw your rectangle
+			g2d.rotate(angle, centerX, centerY);
+			g2d.setTransform(transform);
+			
 
-		g2d.rotate(angle, centerX, centerY);
-
-		g.fillRect(x, y, 13, 34); // draw your rectangle
-
-		g2d.setTransform(transform);
+		}
+		
 			
 	}
 
